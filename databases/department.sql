@@ -36,9 +36,22 @@ CREATE TABLE employees (
 
 INSERT INTO departments(name)
 VALUES("Conventional - onsite");
+INSERT INTO departments(name)
+VALUES("Affordable - onsite");
+INSERT INTO departments(name)
+VALUES("Corporate");
 
 INSERT INTO roles(title, salary, department_id)
 VALUES("Property Manager", 80000.00, 1);
+INSERT INTO roles(title, salary, department_id)
+VALUES("Assistant Manager", 50000.00, 1);
+INSERT INTO roles(title, salary, department_id)
+VALUES("Leasing Professional", 30000.00, 1);
+
 
 INSERT INTO employees(first_name, last_name, role_id, manager_id)
 VALUES("Steven", "Gutierrez", 1, 1);
+INSERT INTO employees(first_name, last_name, role_id, manager_id)
+VALUES("Sam", "Malate", 2, 1);
+INSERT INTO employees(first_name, last_name, role_id, manager_id)
+VALUES("Nelly", "Casafranca", 3, 1);
