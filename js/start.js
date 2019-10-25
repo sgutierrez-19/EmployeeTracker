@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const view = require("./view");
 const add = require("./add");
-const update = require("./update");
+const updateRole = require("./update");
 
 const mysql = require("mysql");
 const connection = mysql.createConnection({
@@ -25,8 +25,9 @@ function start() {
         .then(function(answer) {
             if (answer.action === "View") {
                 view().then(() => start());
-            } else if (answer.action === "Exit") {
-                return connection.end();
+            } else if (answer.action === "Exit") { 
+                connection.end()
+                return process.exit();
             } else if (answer.action === "Add") {
                 add().then(() => start());
             }else {

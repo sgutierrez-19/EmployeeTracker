@@ -54,8 +54,15 @@ function newEmployee() {
 
                     resolve(inquirer
                         .prompt({
-                            type: "input",
+                            type: "rawlist",
                             message: "Please select the ID that matches the employee's role:",
+                            choices: function () {
+                                let choicesArr = [];
+                                for (let i = 0; i < res.length; i++) {
+                                    choicesArr.push(res[i].id);
+                                }
+                                return choicesArr;
+                            },
                             name: "roleId"
                         })
                         .then(function (ans) {
@@ -68,12 +75,19 @@ function newEmployee() {
 
                                     resolve(inquirer
                                         .prompt({
-                                            type: "input",
+                                            type: "rawlist",
                                             message: "Please select the new employee's manager by IDS:",
-                                            name: "managerId"
+                                            choices: function () {
+                                                let choicesArr = [];
+                                                for (let i = 0; i < res.length; i++) {
+                                                    choicesArr.push({ name: res[i].first_name + " " + res[i].last_name, value: res[i]});
+                                                }
+                                                return choicesArr;
+                                            },
+                                            name: "manager"
                                         })
                                         .then(function (ans) {
-                                            let managerId = ans.managerId
+                                            let managerId = ans.manager.id
                                             return new Promise(function (resolve, reject) {
                                                 connection.query(
                                                     `INSERT INTO employees SET ?`,
