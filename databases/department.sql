@@ -2,13 +2,13 @@ DROP DATABASE IF EXISTS employeesDB;
 CREATE DATABASE employeesDB;
 USE employeesDB;
 
-CREATE TABLE department (
+CREATE TABLE departments (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(30),
     PRIMARY KEY(id)
 );
 
-CREATE TABLE role (
+CREATE TABLE roles (
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(30),
     salary DECIMAL(10,2),
@@ -16,7 +16,7 @@ CREATE TABLE role (
     PRIMARY KEY(id)
 );
 
-CREATE TABLE employee (
+CREATE TABLE employees (
     id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
@@ -25,11 +25,11 @@ CREATE TABLE employee (
     PRIMARY KEY(id)
 );
 
-INSERT INTO department(name)
+INSERT INTO departments(name)
 VALUES("Conventional - onsite");
 
-INSERT INTO role(title, salary, department_id)
+INSERT INTO roles(title, salary, department_id)
 VALUES("Property Manager", 80000.00, 123);
 
-INSERT INTO employee(first_name, last_name, role_id, manager_id)
+INSERT INTO employees(first_name, last_name, role_id, manager_id)
 VALUES("Steven", "Gutierrez", 321, 432);

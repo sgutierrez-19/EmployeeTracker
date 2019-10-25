@@ -1,0 +1,24 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgutierrez-19/EmployeeTracker.git"
+  },
+  "author": "Steven Gutierrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgutierrez-19/EmployeeTracker/issues"
+  },
+  "homepage": "https://github.com/sgutierrez-19/EmployeeTracker#readme",
+  "dependencies": {
+    "inquirer": "^7.0.0",
+    "mysql": "^2.17.1"
+  }
+}
