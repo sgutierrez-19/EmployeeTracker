@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const view = require("./view");
 const add = require("./add");
+const update = require("./update");
 
 const mysql = require("mysql");
 const connection = mysql.createConnection({
@@ -29,7 +30,7 @@ function start() {
             } else if (answer.action === "Add") {
                 add().then(() => start());
             }else {
-                console.log("You've selected: " + answer.action)
+                updateRole().then(() => start());
             }
         })
 };

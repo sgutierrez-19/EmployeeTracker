@@ -1,7 +1,5 @@
 const inquirer = require("inquirer");
 const mysql = require("mysql");
-const keepGoing = require("./keepGoing");
-
 
 const connection = mysql.createConnection({
     hostname: "localhost",
@@ -43,3 +41,13 @@ function view() {
 }
 
 module.exports = view
+
+// function viewEmps() {
+//     return new Promise(function(resolve, reject) {
+//         connection.query(`
+//         Select employees.id, employees.first_name, employees.last_name, roles.title
+//         FROM employees
+//         LEFT JOIN roles ON employees.role_id = roles.id;
+//         `)
+//     })
+// }
