@@ -1,6 +1,7 @@
 # EmployeeTracker
 
-![appimg](/img/Employee Tracker.PNG)
+![appimg](/img/employeetracker.PNG)
+
 
 EmployeeTracker utilizes a node.js based applicaiton utilizing a MYSQL database. Users are able to enter in new employees, departments, and employee roles as well as display this information using joins.
 
